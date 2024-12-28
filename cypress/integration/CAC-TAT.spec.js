@@ -24,11 +24,11 @@ describe("Central de Atendimento ao Cliente TAT", function() {
     });
 
   it("preenche os campos obrigatórios e envia o formulário", function() {
-    cy.get('#firstName').type('Guilherme')
-    cy.get('#lastName').type("Aipp")
-    cy.get('#email').type('marques.guilherme@protonmail.com')
-    cy.get('#phone').type('11952439847')
-    cy.get('#open-text-area').type('Teste')
+    cy.get('#firstName').type('Guilherme').should('have.value', 'Guilherme')
+    cy.get('#lastName').type("Aipp").should('have.value', 'Aipp')
+    cy.get('#email').type('marques.guilherme@protonmail.com').should('have.value', 'marques.guilherme@protonmail.com')
+    cy.get('#phone').type('11952439847').should('have.value', '11952439847')
+    cy.get('#open-text-area').type('Teste').should('have.value', 'Teste')
     cy.get('button[type="submit"]').click()
 
 
